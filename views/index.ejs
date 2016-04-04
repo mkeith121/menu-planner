@@ -1,15 +1,15 @@
 <!doctype html>
-<html ng-app>
+<html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
   </head>
-  <body >
-    <div>
+  <body ng-app="menuApp">
+    <div ng-contorller="entryController">
       <form id="menuEntry">
       Menu Entry:<br>
-        <input type="text" id="menuText" value="Menu Entry">
+        <input type="text" id="menuText" value="Menu Entry" ng-model="entry.input">
         <br>
-        <select id="day">
+        <select id="day" ng-model="entry.day">
           <option value="Sunday" />Sunday
           <option value="Monday" />Monday
           <option value="Tuesday" />Tuesday
@@ -18,14 +18,31 @@
           <option value="Friday" />Friday
           <option value="Saturday" />Saturday
         </select>
-        <select id="meal">
+        <select id="meal" ng-model="entry.meal">
           <option value="Breakfast" />Breakfast
           <option value="Lunch" />Lunch
           <option value="Dinner" />Dinner
           <option value="Snacks" />Snacks
         </select>
-        <input type="submit" value="Submit">
+        <input type="button" value="Add to Menu" ng-click="addEntry(entry)">
       </form>
+      <pre>entry = {{ entry | json }}</pre>
     </div>
+    <div>
+      <table style="width:100%">
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td> 
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Eve</td>
+          <td>Jackson</td> 
+          <td>94</td>
+        </tr>
+      </table>
+    </div>
+    <script src="../public/menuApp.js"></script>
+    <script src="../public/entryController.js"></script>
   </body>
 </html>
