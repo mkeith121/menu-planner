@@ -22,7 +22,6 @@
   "homepage": "https://github.com/mkeith121/menu-planner",
 
   "dependencies": {
-    "angular": "^1.5.3",
     "express": "^4.13.4",
     "ejs": "^2.3.3"
 
