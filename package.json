@@ -2,14 +2,14 @@
   "name": "menu-planner",
   "version": "1.0.0",
   "description": "my menu planner",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "engines": {
     "node": "5.10.0"
   },
-  
+
   "repository": {
     "type": "git",
     "url": "https://github.com/mkeith121/menu-planner.git"
@@ -20,8 +20,11 @@
     "url": "https://github.com/mkeith121/menu-planner/issues"
   },
   "homepage": "https://github.com/mkeith121/menu-planner",
+
   "dependencies": {
     "angular": "^1.5.3",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "ejs": "^2.3.3"
+
   }
 }
