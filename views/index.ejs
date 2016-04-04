@@ -3,10 +3,29 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
   </head>
-  <body>
+  <body >
     <div>
-      <input type="text" ng-model="yourName" placeholder="Enter a name here">
-      <h1>Hello, {{ yourName }}!</h1>
+      <form id="menuEntry">
+      Menu Entry:<br>
+        <input type="text" id="menuText" value="Menu Entry">
+        <br>
+        <select id="day">
+          <option value="Sunday" />Sunday
+          <option value="Monday" />Monday
+          <option value="Tuesday" />Tuesday
+          <option value="Wednesday" />Wednesday
+          <option value="Thursday" />Thursday
+          <option value="Friday" />Friday
+          <option value="Saturday" />Saturday
+        </select>
+        <select id="meal">
+          <option value="Breakfast" />Breakfast
+          <option value="Lunch" />Lunch
+          <option value="Dinner" />Dinner
+          <option value="Snacks" />Snacks
+        </select>
+        <input type="submit" value="Submit">
+      </form>
     </div>
   </body>
 </html>
