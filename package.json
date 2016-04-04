@@ -1,0 +1,23 @@
+{
+  "name": "menu-planner",
+  "version": "1.0.0",
+  "description": "my menu planner",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkeith121/menu-planner.git"
+  },
+  "author": "mkeith121",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkeith121/menu-planner/issues"
+  },
+  "homepage": "https://github.com/mkeith121/menu-planner",
+  "dependencies": {
+    "angular": "^1.5.3",
+    "express": "^4.13.4"
+  }
+}
