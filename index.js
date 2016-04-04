@@ -2,6 +2,8 @@ var express = require('express');
 
 var app = express();
 
+app.set('port', (process.env.PORT || 5000));
+
 // To serve static files such as images, CSS files, and JavaScript files, use the express.static built-in middleware function in Express.
 app.use(express.static(__dirname + '/public'));
 
