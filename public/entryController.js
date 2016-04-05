@@ -1,6 +1,9 @@
 app.controller('entryController', function($scope) {
+  $scope.entry = {};
   $scope.entries = [];
   $scope.addEntry = function(entry) {
-    $scope.entries.push(entry);
+    var myEntry = angular.copy(entry);
+    $scope.entries.push(myEntry);
+    $scope.entry = {};
   };
 })

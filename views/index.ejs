@@ -4,8 +4,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
   </head>
   <body ng-app="menuApp">
-    <div ng-contorller="entryController">
-      <form id="menuEntry">
+    <div ng-controller="entryController">
+      <form id="menuEntry" ng>
       Menu Entry:<br>
         <input type="text" id="menuText" value="Menu Entry" ng-model="entry.input">
         <br>
@@ -24,23 +24,35 @@
           <option value="Dinner" />Dinner
           <option value="Snacks" />Snacks
         </select>
-        <input type="button" value="Add to Menu" ng-click="addEntry(entry)">
+        <input type="submit" value="Add to Menu" ng-click="addEntry(entry)">
+        <pre>entry = {{ entry }}</pre>
+        <pre>entries = {{ entries }}</pre>
       </form>
-      <pre>entry = {{ entry | json }}</pre>
-    </div>
     <div>
-      <table style="width:100%">
-        <tr>
-          <td>Jill</td>
-          <td>Smith</td> 
-          <td>50</td>
+<!--       <table style="width:50%">
+        <tr ng-repeat="each in entries">
+          <td>{{ each.day }}</td>
+          <td>{{ each.meal }}</td> 
+          <td>{{ each.input }}</td>
         </tr>
-        <tr>
-          <td>Eve</td>
-          <td>Jackson</td> 
-          <td>94</td>
-        </tr>
-      </table>
+      </table> -->
+      <TABLE BORDER=3 width=340 CELLSPACING=3 CELLPADDING=3 ng-repeat="each in entries">
+        <TR>
+          <TD ROWSPAN="3" ALIGN=center WIDTH="200">{{ each.day }}</TD>
+          <TD ALIGN=center WIDTH="200">{{ each.meal }}</TD>
+          <TD ALIGN=center WIDTH="200">{{ each.input }}</TD>
+        </TR>
+        <TR>
+          <TD ALIGN=center WIDTH="200">{{ each.meal }}</TD>
+          <TD ALIGN=center WIDTH="200">{{ each.input }}</TD>
+        </TR>
+        <TR>
+          <TD ALIGN=center WIDTH="200">{{ each.meal }}</TD>
+          <TD ALIGN=center WIDTH="200">{{ each.input }}</TD>
+        </TR>
+      </TABLE>
+    </div>
+
     </div>
     <script src="/menuApp.js"></script>
     <script src="/entryController.js"></script>
