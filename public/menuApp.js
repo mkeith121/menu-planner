@@ -1,5 +1,6 @@
 angular.module('menuApp', [
   'menuApp.entryCont',
   'menuApp.welcomeCont',
-  'menuApp.entryServ'
+  'menuApp.entryServ',
+  'menuApp.sortServ'
   ]);

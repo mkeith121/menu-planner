@@ -5,13 +5,15 @@
   </head>
   <body ng-app="menuApp">
     <div ng-controller="welcomeController">
-      <input type= "text" ng-model="name">
-      <h2>Hello there, {{ name }}</h2>
-      <h3>Today is {{ day | date: 'EEEE, MMMM d, y' }}</h3>
-      Helllo world
+    <form ng-submit="render()" >
+      <input ng-hide="show" type= "text" ng-model="name" placeholder="What's your name?">
+    </form>
+      <h2 ng-show="show">Hello there, {{ name }}</h2>
+      <h3 ng-show="show">Today is {{ day | date: 'EEEE, MMMM d, y' }}</h3>
     </div>
     <div ng-controller="entryController">
     <h2>Menu Entry:</h2>
+      <p>Hello and welcome! Creating a menu for the week is as easy as submitting a form! Give it a try!<p>
       <form id="menuEntry" ng>
         <input type="text" id="menuText" placeholder="Whatcha Wanna Eat?" ng-model="entry.input">
         <br>
@@ -33,18 +35,25 @@
           <option value="Snacks" />Snacks
         </select>
         <input type="submit" value="Add to Menu" ng-click="addEntry(entry)">
-        <br>
-        <br>
-
-        <pre>entry = {{ entry }}</pre>
-        <pre>entries = {{ entries }}</pre>
-
       </form>
-    <div>
+      <input ng-click="reSort()" type="button" value="Sort Starting Today">
+      <input ng-click="reSort('Sunday')" type="button" value="Sort Starting Sunday">
 
-<!--       This is the table I actually want -->
+      <select id="custom" value="Day" ng-model="sortDay">
+          <option value="" disabled selected>Day</option>
+          <option value="Sunday" />Sunday
+          <option value="Monday" />Monday
+          <option value="Tuesday" />Tuesday
+          <option value="Wednesday" />Wednesday
+          <option value="Thursday" />Thursday
+          <option value="Friday" />Friday
+          <option value="Saturday" />Saturday
+        </select>
+         <input  ng-click="reSort(sortDay)" type="button" value="Custom Sort">
+         <pre>{{ sortDay }}</pre>
 
-      <table border=3 width=50% cellspacing=3 cellpadding=3 ng-repeat="each in entries">
+
+      <table border=3 width=100% cellspacing=3 cellpadding=3 ng-repeat="each in entries">
         <tr>
           <td rowspan="4" align=center width="200">{{ each.day }}</td>
           <td align=center width="200">Breakfast</td>
@@ -63,13 +72,12 @@
           <td align=center width="200">{{ each.entry.Snacks }}</td>
         </TR>
       </table>
-
     </div>
 
-    </div>
     <script src="/menuApp.js"></script>
     <script src="/entryController.js"></script>
     <script src="/welcomeController.js"></script>
     <script src="/entryService.js"></script>
+    <script src="/sortMagic.js"></script>
   </body>
 </html>
