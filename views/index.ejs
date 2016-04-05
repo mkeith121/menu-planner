@@ -7,9 +7,10 @@
     <div ng-controller="entryController">
       <form id="menuEntry" ng>
       Menu Entry:<br>
-        <input type="text" id="menuText" value="Menu Entry" ng-model="entry.input">
+        <input type="text" id="menuText" placeholder="Menu Entry" ng-model="entry.input">
         <br>
-        <select id="day" ng-model="entry.day">
+        <select id="day" ng-model="entry.day" value="Day">
+          <option value="" disabled selected>Day</option>
           <option value="Sunday" />Sunday
           <option value="Monday" />Monday
           <option value="Tuesday" />Tuesday
@@ -18,39 +19,45 @@
           <option value="Friday" />Friday
           <option value="Saturday" />Saturday
         </select>
-        <select id="meal" ng-model="entry.meal">
+        <select id="meal" ng-model="entry.meal" value="Meal">
+          <option value="" disabled selected>Occasion</option>
           <option value="Breakfast" />Breakfast
           <option value="Lunch" />Lunch
           <option value="Dinner" />Dinner
           <option value="Snacks" />Snacks
         </select>
         <input type="submit" value="Add to Menu" ng-click="addEntry(entry)">
-        <pre>entry = {{ entry }}</pre>
-        <pre>entries = {{ entries }}</pre>
+        <br>
+        <br>
+
+<!--         <pre>entry = {{ entry }}</pre>
+        <pre>entries = {{ entries }}</pre> -->
+
       </form>
     <div>
-<!--       <table style="width:50%">
-        <tr ng-repeat="each in entries">
-          <td>{{ each.day }}</td>
-          <td>{{ each.meal }}</td> 
-          <td>{{ each.input }}</td>
+
+<!--       This is the table I actually want -->
+
+      <table border=3 width=50% cellspacing=3 cellpadding=3 ng-repeat="each in entries">
+        <tr>
+          <td rowspan="4" align=center width="200">{{ each.day }}</td>
+          <td align=center width="200">Breakfast</td>
+          <td align=center width="200">{{ each.entry.Breakfast }}</td>
         </tr>
-      </table> -->
-      <TABLE BORDER=3 width=340 CELLSPACING=3 CELLPADDING=3 ng-repeat="each in entries">
-        <TR>
-          <TD ROWSPAN="3" ALIGN=center WIDTH="200">{{ each.day }}</TD>
-          <TD ALIGN=center WIDTH="200">{{ each.meal }}</TD>
-          <TD ALIGN=center WIDTH="200">{{ each.input }}</TD>
+        <tr>
+          <td align=center width="200">Lunch</td>
+          <td align=center width="200">{{ each.entry.Lunch }}</td>
+        </tr>
+        <tr>
+          <td align=center width="200">Dinner</td>
+          <td align=center width="200">{{ each.entry.Dinner }}</td>
+        </tr>
+        <tr>
+          <td align=center width="200">Snacks</td>
+          <td align=center width="200">{{ each.entry.Snacks }}</td>
         </TR>
-        <TR>
-          <TD ALIGN=center WIDTH="200">{{ each.meal }}</TD>
-          <TD ALIGN=center WIDTH="200">{{ each.input }}</TD>
-        </TR>
-        <TR>
-          <TD ALIGN=center WIDTH="200">{{ each.meal }}</TD>
-          <TD ALIGN=center WIDTH="200">{{ each.input }}</TD>
-        </TR>
-      </TABLE>
+      </table>
+
     </div>
 
     </div>

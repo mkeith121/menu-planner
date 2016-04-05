@@ -1,1 +1,2 @@
-var app = angular.module('menuApp', []);
+angular.module('menuApp', [
+  'menuApp.otherModule']);
