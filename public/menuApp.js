@@ -1,2 +1,5 @@
 angular.module('menuApp', [
-  'menuApp.otherModule']);
+  'menuApp.entryCont',
+  'menuApp.welcomeCont',
+  'menuApp.entryServ'
+  ]);

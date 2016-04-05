@@ -4,10 +4,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
   </head>
   <body ng-app="menuApp">
+    <div ng-controller="welcomeController">
+      <input type= "text" ng-model="name">
+      <h2>Hello there, {{ name }}</h2>
+      <h3>Today is {{ day | date: 'EEEE, MMMM d, y' }}</h3>
+      Helllo world
+    </div>
     <div ng-controller="entryController">
+    <h2>Menu Entry:</h2>
       <form id="menuEntry" ng>
-      Menu Entry:<br>
-        <input type="text" id="menuText" placeholder="Menu Entry" ng-model="entry.input">
+        <input type="text" id="menuText" placeholder="Whatcha Wanna Eat?" ng-model="entry.input">
         <br>
         <select id="day" ng-model="entry.day" value="Day">
           <option value="" disabled selected>Day</option>
@@ -30,8 +36,8 @@
         <br>
         <br>
 
-<!--         <pre>entry = {{ entry }}</pre>
-        <pre>entries = {{ entries }}</pre> -->
+        <pre>entry = {{ entry }}</pre>
+        <pre>entries = {{ entries }}</pre>
 
       </form>
     <div>
@@ -63,5 +69,7 @@
     </div>
     <script src="/menuApp.js"></script>
     <script src="/entryController.js"></script>
+    <script src="/welcomeController.js"></script>
+    <script src="/entryService.js"></script>
   </body>
 </html>
