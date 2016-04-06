@@ -1,0 +1,18 @@
+{
+  "name": "menu-planner",
+  "description": "my menu planner",
+  "main": "index.js",
+  "authors": [
+    "mkeith121"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mkeith121/menu-planner",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

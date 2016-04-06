@@ -2,6 +2,7 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="bower_components/bootstrap/dist/boots.min.js"></script>
   </head>
   <body ng-app="menuApp">
     <div ng-controller="welcomeController">
@@ -14,7 +15,7 @@
     <div ng-controller="entryController">
     <h2>Menu Entry:</h2>
       <p>Hello and welcome! Creating a menu for the week is as easy as submitting a form! Give it a try!<p>
-      <form id="menuEntry" ng>
+      <form id="menuEntry">
         <input type="text" id="menuText" placeholder="Whatcha Wanna Eat?" ng-model="entry.input">
         <br>
         <select id="day" ng-model="entry.day" value="Day">

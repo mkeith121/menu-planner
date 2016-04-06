@@ -3,4 +3,4 @@ angular.module('menuApp', [
   'menuApp.welcomeCont',
   'menuApp.entryServ',
   'menuApp.sortServ'
-  ]);
+  ])
