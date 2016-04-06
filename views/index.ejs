@@ -2,7 +2,7 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-    <script src="bower_components/bootstrap/dist/boots.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   </head>
   <body ng-app="menuApp">
     <div ng-controller="welcomeController">
@@ -37,6 +37,7 @@
         </select>
         <input type="submit" value="Add to Menu" ng-click="addEntry(entry)">
       </form>
+      <br>
       <input ng-click="reSort()" type="button" value="Sort Starting Today">
       <input ng-click="reSort('Sunday')" type="button" value="Sort Starting Sunday">
 
@@ -51,6 +52,9 @@
           <option value="Saturday" />Saturday
         </select>
          <input  ng-click="reSort(sortDay)" type="button" value="Custom Sort">
+         <br>
+         <br>
+
 
       <table border=3 width=100% cellspacing=3 cellpadding=3 ng-repeat="each in entries">
         <tr>
